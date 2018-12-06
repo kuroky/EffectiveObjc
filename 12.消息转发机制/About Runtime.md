@@ -62,7 +62,7 @@ struct objc_method {
 在上面的过程中，如果foo没有找到怎么办？通常程序会挂掉，在此之前，Objective-C的运行时还有三次机会：
 
 - `动态解析`
-- `备援接受者`
+- `备援接收者`
 - `完整的消息转发`
 
 #### 1).动态方法解析
@@ -82,7 +82,7 @@ void fooMethod(id obj, SEL _cmd) {
 	return [super resolveInstanceMethod];
 }
 ```
-如果reslove方法返回NO，运行时就会移到下一步：消息转发，备援接受者。
+如果reslove方法返回NO，运行时就会移到下一步：消息转发，备援接收者。
 上面的例子可以重新写成
 
 ```
@@ -92,7 +92,7 @@ IMP fooIMP = imp_implementationWithBlock(^(id _self) {
 
 class_addMethod([self class], aSEL, fooIMP, @"v@:");
 ```
-#### 2).备援接受者
+#### 2).备援接收者
 如果目标对象实现了*-forwardingTargetForSelector:*，Runtime这时就会调用这个方法，尝试找到一个能响应该消息的对象，如果获取到，则直接转发给它。如果返回nil，继续第三步。
 
 ```
@@ -138,7 +138,7 @@ NSInvocation 实际上就是对一个消息的描述，包括selector 以及参�
 	2. 如果没有找到，Runtime 会发送 +resolveInstanceMethod: 或者 +resolveClassMethod: 尝试去 resolve 这个消息；
 	3. 如果 resolve 方法返回 NO，Runtime 就发送 -forwardingTargetForSelector:允许你把这个消息转发给另一个对象；
 	4. 如果没有新的目标对象返回， Runtime 就会发送 -methodSignatureForSelector:和 -forwardInvocation: 消息。你可以发送 -invokeWithTarget: 消息来手动转发消息或者发送 -doesNotRecognizeSelector: 抛出异常。
-![]()
+![](https://raw.githubusercontent.com/kuroky/EffectiveObjc/master/12.%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91%E6%9C%BA%E5%88%B6/421484-7dcfac31d3f976fa.png)
 
 ## 方法交换
 有个需求，对App的用户进行行为追踪。记录用户点击的页面。
