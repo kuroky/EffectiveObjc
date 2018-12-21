@@ -165,7 +165,7 @@ NSInvocation 实际上就是对一个消息的描述，包括selector 以及参�
 缺点也很明显：
 1.需要继承*UIViewController*，*UITableViewController*。。。
 2.不能保证其余开发者在写新界面也会继承*CustomViewController*。
-#### Method Swizzling
+#### 3.Method Swizzling
 swizzle一个方法其实就是在程序运行时在Dispatch Table里做点改动，让这个方法的名字(SEL)对应到另一个IMP。
 首先定义一个类别，添加将要Swizzled的方法：
 

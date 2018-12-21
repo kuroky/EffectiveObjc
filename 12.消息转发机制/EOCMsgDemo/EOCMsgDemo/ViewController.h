@@ -21,3 +21,14 @@
 
 @end
 
+@interface Spark : NSObject
+
+- (void)speak;
+
+@end
+
+@interface Spark1 : NSObject
+
+- (void)speak;
+
+@end

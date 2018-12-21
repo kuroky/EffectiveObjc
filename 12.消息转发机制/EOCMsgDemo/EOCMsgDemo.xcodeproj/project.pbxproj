@@ -13,6 +13,7 @@
 		5B845B6321B8F754006F7899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B845B6221B8F754006F7899 /* Assets.xcassets */; };
 		5B845B6621B8F754006F7899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B845B6421B8F754006F7899 /* LaunchScreen.storyboard */; };
 		5B845B6921B8F754006F7899 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B845B6821B8F754006F7899 /* main.m */; };
+		5B845B7121B903FA006F7899 /* NSString+MXAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B845B7021B903FA006F7899 /* NSString+MXAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		5B845B6521B8F754006F7899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B845B6721B8F754006F7899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B845B6821B8F754006F7899 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5B845B6F21B903FA006F7899 /* NSString+MXAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MXAdd.h"; sourceTree = "<group>"; };
+		5B845B7021B903FA006F7899 /* NSString+MXAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MXAdd.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				5B845B5A21B8F753006F7899 /* AppDelegate.m */,
 				5B845B5C21B8F753006F7899 /* ViewController.h */,
 				5B845B5D21B8F753006F7899 /* ViewController.m */,
+				5B845B6F21B903FA006F7899 /* NSString+MXAdd.h */,
+				5B845B7021B903FA006F7899 /* NSString+MXAdd.m */,
 				5B845B5F21B8F753006F7899 /* Main.storyboard */,
 				5B845B6221B8F754006F7899 /* Assets.xcassets */,
 				5B845B6421B8F754006F7899 /* LaunchScreen.storyboard */,
@@ -141,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B845B7121B903FA006F7899 /* NSString+MXAdd.m in Sources */,
 				5B845B5E21B8F753006F7899 /* ViewController.m in Sources */,
 				5B845B6921B8F754006F7899 /* main.m in Sources */,
 				5B845B5B21B8F753006F7899 /* AppDelegate.m in Sources */,

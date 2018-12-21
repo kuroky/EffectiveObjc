@@ -8,6 +8,11 @@
 
 #import "ViewController.h"
 #import <objc/runtime.h>
+#import "NSString+MXAdd.h"
+
+struct TestCase {
+    void *isa;
+};
 
 @interface ViewController ()
 
@@ -22,10 +27,42 @@
     //obj.date = [NSDate dateWithTimeIntervalSince1970:475372800];
     [obj test];
     //NSLog(@"%@", obj.date);
+    
+    [self methodChange];
+    
+    Spark *spark = [Spark new];
+    [spark speak];
+    
+    struct TestCase *testcase = (__bridge void *)spark;
+    testcase->isa = (__bridge void *)[Spark1 class];
+    [spark speak];
 }
 
 - (void)test {
     NSLog(@"ViewController");
+}
+
+- (void)methodChange {
+    NSString *str1 = @"AbCdEfG";
+    NSLog(@"lowercaseString: %@", str1.lowercaseString);
+    
+    [str1 mx_myCapitalizedString];    
+}
+
+@end
+
+@implementation Spark
+
+- (void)speak {
+    NSLog(@"speak");
+}
+
+@end
+
+@implementation Spark1
+
+- (void)speak {
+    NSLog(@"speak1");
 }
 
 @end
